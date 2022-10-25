@@ -61,7 +61,7 @@ public class quizArreglos {
 		System.out.println("Ingrese un numero:");
 		num = keyboard.nextDouble();
 		double resultado = Math.sqrt(num);
-		System.out.println("La raíz cuadrada de " + num + " es " + resultado);    
+		System.out.println("La raíz cuadrada de " + num + " es igual a:" + resultado);    
 	}
 
 	public static void ElevarunaPotencia(){
@@ -76,7 +76,7 @@ public class quizArreglos {
 		potencia = elevado.nextDouble();
 
 		double elevadop = Math.pow(num, potencia);
-		System.out.println( num + "elevado al cuadrado es " + elevadop);
+		System.out.println( num +  " " + "elevado a la" + potencia+ " " +  " es igual a: "+elevadop);
 
 
 	}
@@ -108,6 +108,3 @@ public class quizArreglos {
 		System.exit(0);
 	}
 }
-
-
-
