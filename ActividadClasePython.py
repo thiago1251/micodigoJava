@@ -1,33 +1,33 @@
-Espacio = ['----------------------------------------------']
+linea = ['----------------------------------------------']
 
-paises = ['Malacia','India','Ibiza', 'Paris','Santorini']
-print (paises)
-print (Espacio)
+lugares = ['Malacia','India','Ibiza', 'Paris','Santorini']
+print (lugares)
+print (linea)
 
-print (sorted(paises))
-print (Espacio)
+print (sorted(lugares))
+print (linea)
 
-print (paises)
-print (Espacio)
+print (lugares)
+print (linea)
 
-x = sorted(paises, reverse = True)
-print (x)
-print (Espacio)
+a = sorted(lugares, reverse = True)
+print (a)
+print (linea)
 
-print (paises)
-print (Espacio)
+print (lugares)
+print (linea)
 
-paises.reverse()
-print (paises)
-print (Espacio)
+lugares.reverse()
+print (lugares)
+print (linea)
 
-paises.reverse()
-print (paises)
-print (Espacio)
+lugares.reverse()
+print (lugares)
+print (linea)
 
-paises.sort()
-print (paises)
-print (Espacio)
+lugares.sort()
+print (lugares)
+print (linea)
 
-paises.sort(reverse=True)
-print(paises)
+lugares.sort(reverse=True)
+print(lugares)
