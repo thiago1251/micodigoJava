@@ -3,15 +3,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.String;
 import java.util.Collections;
+
 public class cami {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		project();
 	}
-
+	static int k= 0;
+	static int l= 0;
 	public static void project () {
 		Scanner s = new Scanner(System.in);
-		int opc, cant, pre, opc1, c = 0, opc2, cantn, pren, h = 0;
+		int opc, cant, pre, opc1, c = 0, opc2, cantn, pren;
 		float cel;
 		ArrayList<String> categoria = new ArrayList<>();
 		ArrayList<String> producto = new ArrayList<>();
@@ -166,14 +168,15 @@ public class cami {
 				ArrayList<String> catord = (ArrayList<String>) categoria.clone();
 				Collections.sort(catord);
 				for (String catord1 : catord) {
-					for (int i = 0; i < categoria.toArray().length-1; i++) {
-						for (int k = 0; k < catord.toArray().length-1; k++) {
-							if (catord.get(k).equals(categoria.get(i))) {
-								h = k;
+					for (int i = 0; i < categoria.toArray().length; i++) {
+						for (k = 0; k < catord.toArray().length; k++) {
+							if (catord.get(k).equals(categoria.get(i))) {								
+								System.out.println("\t" + categoria.get(k) + "\t\t" + producto.get(k) + "\t\t" + cantidad.get(k) + "\t\t\t" + precio.get(k) + "\t\t\t" + id.get(k));
 							}
+
 						}
-						System.out.println("\t" + categoria.get(h) + "\t\t" + producto.get(h) + "\t\t" + cantidad.get(h) + "\t\t\t" + precio.get(h) + "\t\t\t" + id.get(h));
-					}
+
+					}break;
 				}
 				System.out.println("\nCantidad de productos: " + producto.toArray().length);
 				for (int i = 0; i < cantidad.toArray().length; i++) {
