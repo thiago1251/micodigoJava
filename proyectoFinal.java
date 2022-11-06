@@ -50,11 +50,14 @@ public class uno {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		JOptionPane.showMessageDialog(null, "                                                                                    "+"¡HELLO WORLD!\nESTE ES UN SISTEMA DE "
+				+ "ADMINISTRACION PARA LOS ENCUENTROS DEPORTIVOS QUE SE LLEVARAN A CABO\nEN EL ESTADIO AZTECA");
 		equipos();
 	}
 
 	public static void equipos() {
-		String menu="1. BRASIL\n2. MEXICO\n3. COLOMBIA\n4. VENEZUELA\n5. ECUADOR\n6. PERU\n7. SALIR";
+		String menu="BASE DE DATOS DE LOS EQUIPOS_SELECCIONE EL EQUIPO A MODIFICAR\n1. BRASIL\n2. MEXICO\n3. COLOMBIA\n4. VENEZUELA\n5. ECUADOR\n6. PERU\n7. SALIR";
 		int opcion=0;
 		do {
 			opcion=Integer.parseInt(JOptionPane.showInputDialog(menu));
@@ -331,7 +334,7 @@ public class uno {
 				break;
 			case 5:
 
-				String menuE= " HOLA ESTA ES LA INFORMACION EQUIPO MEXICO\n" +
+				String menuE= " HOLA ESTA ES LA INFORMACION EQUIPO ECUADOR\n" +
 						"1. JUGADORES Y NUMERO\n2. JUGADORES EN CANCHA\n3. BANCA\n4. INGRESAR NUEVO JUGADOR A LA LISTA\n5. CAMBIO JUGADOR EN CANCHA\n6. SACAR JUGADOR\n7. CAMBIAR POSICION DE UN JUGADOR\n8. ELEGIR CAPITAN\n9. CAMBIAR ESTADO(JUGAR,NO JUGAR)\n10. VOLVER\\n11.SALIR";
 				int opcionE=0;
 				do {
@@ -397,7 +400,7 @@ public class uno {
 				break;
 			case 6:
 
-				String menuP= " HOLA ESTA ES LA INFORMACION EQUIPO MEXICO\n" +
+				String menuP= " HOLA ESTA ES LA INFORMACION EQUIPO PERU\n" +
 						"1. JUGADORES Y NUMERO\n2. JUGADORES EN CANCHA\n3. BANCA\n4. INGRESAR NUEVO JUGADOR A LA LISTA\n5. CAMBIO JUGADOR EN CANCHA\n6. SACAR JUGADOR\n7. CAMBIAR POSICION DE UN JUGADOR\n8. ELEGIR CAPITAN\n9. CAMBIAR ESTADO(JUGAR,NO JUGAR)\n10. VOLVER\n11. SALIR";
 				int opcionP=0;
 				do {
