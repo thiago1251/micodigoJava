@@ -37,8 +37,30 @@ public class uno {
 	static int columnaBuscar = 0;
 	static String linea = ".......................................";
 
+	public static void saludo() {
+		JOptionPane.showMessageDialog(null, "                                                                                    "+"¡HELLO WORLD!\nESTE ES UN SISTEMA DE "
+				+ "ADMINISTRACION PARA LOS ENCUENTROS DEPORTIVOS QUE SE LLEVARAN A CABO\nEN EL ESTADIO AZTECA  :)");
+	}
+	public static void firstmenu() {
+		String menu="-------------------"+"INICIO"+"--------------------"+"\n1. Simular Campeonato\n2. Cambios Manuales\n3. Salir";
+		int opcion=0;
+		do {
+			opcion=Integer.parseInt(JOptionPane.showInputDialog(menu));
 
+			switch (opcion)
+			{
+			case 1:
+				JOptionPane.showMessageDialog(null, " cry :(");
+				break;
+			case 2:
+				equipos();
+				break;
+			}
 
+		}while(opcion!=3);
+		System.exit(0);
+
+	}
 	static String[ ] team1= {"Ederson", "Weverton","Marquinhos","Eder Militao", "Bremer", "Renan Lodi","Roger Ibañes",
 			"Alez Telles","Danilo", "Thiago Silva", "Fabinho","Casemiro","Bruno Guimaraes", "Fred",
 			"Everton Ribeiro","Vinicius Junior", "Neymar"};
@@ -49,15 +71,15 @@ public class uno {
 	};
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		JOptionPane.showMessageDialog(null, "                                                                                    "+"¡HELLO WORLD!\nESTE ES UN SISTEMA DE "
-				+ "ADMINISTRACION PARA LOS ENCUENTROS DEPORTIVOS QUE SE LLEVARAN A CABO\nEN EL ESTADIO AZTECA");
-		equipos();
+		saludo();
+		firstmenu();
+
 	}
 
+
+
 	public static void equipos() {
-		String menu="BASE DE DATOS DE LOS EQUIPOS_SELECCIONE EL EQUIPO A MODIFICAR\n1. BRASIL\n2. MEXICO\n3. COLOMBIA\n4. VENEZUELA\n5. ECUADOR\n6. PERU\n7. SALIR";
+		String menu="BASE DE DATOS DE LOS EQUIPOS_SELECCIONE EL EQUIPO A MODIFICAR\n1. BRASIL\n2. MEXICO\n3. COLOMBIA\n4. VENEZUELA\n5. ECUADOR\n6. PERU\n7. VOLVER\n8.SALIR";
 		int opcion=0;
 		do {
 			opcion=Integer.parseInt(JOptionPane.showInputDialog(menu));
@@ -335,7 +357,7 @@ public class uno {
 			case 5:
 
 				String menuE= " HOLA ESTA ES LA INFORMACION EQUIPO ECUADOR\n" +
-						"1. JUGADORES Y NUMERO\n2. JUGADORES EN CANCHA\n3. BANCA\n4. INGRESAR NUEVO JUGADOR A LA LISTA\n5. CAMBIO JUGADOR EN CANCHA\n6. SACAR JUGADOR\n7. CAMBIAR POSICION DE UN JUGADOR\n8. ELEGIR CAPITAN\n9. CAMBIAR ESTADO(JUGAR,NO JUGAR)\n10. VOLVER\\n11.SALIR";
+						"1. JUGADORES Y NUMERO\n2. JUGADORES EN CANCHA\n3. BANCA\n4. INGRESAR NUEVO JUGADOR A LA LISTA\n5. CAMBIO JUGADOR EN CANCHA\n6. SACAR JUGADOR\n7. CAMBIAR POSICION DE UN JUGADOR\n8. ELEGIR CAPITAN\n9. CAMBIAR ESTADO(JUGAR,NO JUGAR)\n10. VOLVER\n11.SALIR";
 				int opcionE=0;
 				do {
 					opcionE=Integer.parseInt(JOptionPane.showInputDialog(menuE));
@@ -460,14 +482,15 @@ public class uno {
 						equipos();
 					}
 				}while(opcionP!=11);
-
 				System.exit(0);
+
+			case 7: 
+				firstmenu();
+				break;
 			}
-		}while(opcion!=7);
+		}while(opcion!=8);
 
-
-
-
+		System.exit(0);
 
 	}
 	public static void pociciones(int[][]intArray,Boolean[]estadosJugadores) {
