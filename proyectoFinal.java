@@ -1,5 +1,7 @@
 package proyecto;
 
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,7 +10,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class uno {
+public class  ProyectoFinal{
 
 	final String  equipo1 = "Brasil";
 	final String  equipo2 = "Mexico";
@@ -115,7 +117,7 @@ public class uno {
 						System.out.println();
 						break;
 					case 4:
-						nuevoJugador(team1, opcion2, estadoJugadores, opcion2, null);
+						nuevoJugador(team1, opcion2, estadoJugadores, opcion2, null, linea);
 						System.out.print(linea);
 						System.out.println();
 						break;
@@ -557,41 +559,31 @@ public class uno {
 		}
 	}
 
-	public static void nuevoJugador(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
+	public static void nuevoJugador(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando, String linea) {
+		playersteam1(team1, teamN1);
+		int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+		teamN1[remplazo] = null;
+		team1[remplazo] = null;
+		estadoJugadores[remplazo] = null;
+		pocisiones1[remplazo] = null;
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+		name = (JOptionPane.showInputDialog("Ingrese el nombre del nuevo Jugador"));
+		posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+		juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+		jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+		teamN1[remplazo] =juego ;
+		team1[remplazo] = name;
+		estadoJugadores[remplazo] = jugando;
+		pocisiones1[remplazo] = posicion;
+		System.out.println(linea);
+		System.out.println("Lista Actualizada"+ Arrays.toString(team1));
+		System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+		System.out.println("Lista Actualizada: "+Arrays.toString(teamN1));  
+		System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones1));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones1= arrayList2.toArray(pocisiones1); 
+	}	
 
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamN1));  
-			arrayList1.add(juego);  
-			teamN1 = arrayList1.toArray(teamN1);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones1));
-		System.out.println("Array after adding element: "+Arrays.toString(teamN1));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
-	}
 
 	public static void nuevoJugadorcancha(int[][] intArray, int cambio, int player) {
 		do {
@@ -735,7 +727,7 @@ public class uno {
 			System.out.println(+ i +")"+team1[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team1[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team1[capitan]);
 	}
 	public static void cambiarEstado() {
 		for( i = 0; i<team1.length;i++) {
@@ -828,38 +820,27 @@ public class uno {
 
 	public static void nuevoJugadorM(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+		playersteam1(team1, teamN1);
+		int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+		teamN1[remplazo] = null;
+		team1[remplazo] = null;
+		estadoJugadores[remplazo] = null;
+		pocisiones1[remplazo] = null;
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+		name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
+		posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+		juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+		jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones2));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones2= arrayList2.toArray(pocisiones2); 
-
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamN2));  
-			arrayList1.add(juego);  
-			teamN2 = arrayList1.toArray(teamN2);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones2));
-		System.out.println("Array after adding element: "+Arrays.toString(teamN2));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
+		teamN1[remplazo] =juego ;
+		team1[remplazo] = name;
+		estadoJugadores[remplazo] = jugando;
+		pocisiones1[remplazo] = posicion;
+		System.out.println(linea);
+		System.out.println("Lista Actualizada: "+ Arrays.toString(team1));
+		System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+		System.out.println("Lista Actualizada: "+Arrays.toString(teamN1));  
+		System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 	}
 
 	public static void nuevoJugadorcanchaM(int[][] intArray, int cambio, int player) {
@@ -1005,7 +986,7 @@ public class uno {
 			System.out.println(+ i +")"+team2[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team2[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team2[capitan]);
 	}
 	public static void cambiarEstadoM() {
 		for( i = 0; i<team2.length;i++) {
@@ -1096,40 +1077,28 @@ public class uno {
 		}
 	}
 
-	public static void nuevoJugadorV(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
+	public static void nuevoJugadorV(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {playersteam1(team1, teamN1);
+	int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+	teamN1[remplazo] = null;
+	team1[remplazo] = null;
+	estadoJugadores[remplazo] = null;
+	pocisiones1[remplazo] = null;
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+	name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
+	posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+	juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+	jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+	teamN1[remplazo] =juego ;
+	team1[remplazo] = name;
+	estadoJugadores[remplazo] = jugando;
+	pocisiones1[remplazo] = posicion;
+	System.out.println(linea);
+	System.out.println("Lista Actualizada: "+ Arrays.toString(team1));
+	System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+	System.out.println("Lista Actualizada: "+Arrays.toString(teamN1));  
+	System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones2V));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones2V= arrayList2.toArray(pocisiones2V); 
-
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamN2V));  
-			arrayList1.add(juego);  
-			teamN2V = arrayList1.toArray(teamN2V);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones2V));
-		System.out.println("Array after adding element: "+Arrays.toString(teamN2V));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
 	}
 
 	public static void nuevoJugadorcanchaV(int[][] intArray, int cambio, int player) {
@@ -1276,7 +1245,7 @@ public class uno {
 			System.out.println(+ i +")"+team2v[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team2v[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team2v[capitan]);
 	}
 	public static void cambiarEstadoV() {
 		for( i = 0; i<team2v.length;i++) {
@@ -1367,39 +1336,28 @@ public class uno {
 	}
 
 	public static void nuevoJugadorC(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
+		playersteam1(team1, teamN1);
+		int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+		teamN1[remplazo] = null;
+		team1[remplazo] = null;
+		estadoJugadores[remplazo] = null;
+		pocisiones1[remplazo] = null;
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+		name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
+		posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+		juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+		jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+		teamN1[remplazo] =juego ;
+		team1[remplazo] = name;
+		estadoJugadores[remplazo] = jugando;
+		pocisiones1[remplazo] = posicion;
+		System.out.println(linea);
+		System.out.println("Lista Actualizada: "+ Arrays.toString(team1));
+		System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+		System.out.println("Lista Actualizada: "+Arrays.toString(teamN1));  
+		System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones2C));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones2C= arrayList2.toArray(pocisiones2C); 
-
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamN2C));  
-			arrayList1.add(juego);  
-			teamN2C = arrayList1.toArray(teamN2C);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones2C));
-		System.out.println("Array after adding element: "+Arrays.toString(teamN2C));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
 	}
 
 	public static void nuevoJugadorcanchaC(int[][] intArray, int cambio, int player) {
@@ -1543,7 +1501,7 @@ public class uno {
 			System.out.println(+ i +")"+team2C[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team2C[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team2C[capitan]);
 	}
 	public static void cambiarEstadoC() {
 		for( i = 0; i<team2C.length;i++) {
@@ -1638,39 +1596,28 @@ public class uno {
 	}
 
 	public static void nuevoJugadorE(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
+		playersteam1(team1, teamN1);
+		int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+		teamN1[remplazo] = null;
+		team1[remplazo] = null;
+		estadoJugadores[remplazo] = null;
+		pocisiones1[remplazo] = null;
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+		name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
+		posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+		juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+		jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+		teamN1[remplazo] =juego ;
+		team1[remplazo] = name;
+		estadoJugadores[remplazo] = jugando;
+		pocisiones1[remplazo] = posicion;
+		System.out.println(linea);
+		System.out.println("Lista Actualizada: "+ Arrays.toString(team1));
+		System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+		System.out.println("Lista Actualizadat: "+Arrays.toString(teamN1));  
+		System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones2E));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones2E= arrayList2.toArray(pocisiones2E); 
-
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamN2E));  
-			arrayList1.add(juego);  
-			teamN2E = arrayList1.toArray(teamN2E);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones2E));
-		System.out.println("Array after adding element: "+Arrays.toString(teamN2E));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
 	}
 
 	public static void nuevoJugadorcanchaE(int[][] intArray, int cambio, int player) {
@@ -1813,7 +1760,7 @@ public class uno {
 			System.out.println(+ i +")"+team2E[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team2E[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team2E[capitan]);
 	}
 	public static void cambiarEstadoE() {
 		for( i = 0; i<team2E.length;i++) {
@@ -1908,46 +1855,32 @@ public class uno {
 	}
 
 	public static void nuevoJugadorMP(String[] team1, int num, Boolean[]estadoJugadores, int juego, Boolean jugando) {
+		playersteam1(team1, teamN1);
+		int remplazo = Integer.parseInt(JOptionPane.showInputDialog("Tienes 17 jugadores, cual desea remplazar"));
+		teamN1[remplazo] = null;
+		team1[remplazo] = null;
+		estadoJugadores[remplazo] = null;
+		pocisiones1[remplazo] = null;
 
-		String inputNumero = JOptionPane.showInputDialog("Cuantos jugadores desea ingresar");
-		int numero = Integer.parseInt(inputNumero);
+		name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
+		posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
+		juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
+		jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
 
-		while (contador <= numero) {
-			name = (JOptionPane.showInputDialog("Ingrese el nombre del Jugador"));
-			posicion = (JOptionPane.showInputDialog("Ingrese la posicion del Jugador_ ej: portero."));
-			juego = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de camiseta"));
-			jugando = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese (true) si esta jugando\nIngrese (false) si no es asi."));
-			ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(team1));   
-			arrayList.add(name.toUpperCase());  
-			team1 = arrayList.toArray(team1); 
+		teamN1[remplazo] =juego ;
+		team1[remplazo] = name;
+		estadoJugadores[remplazo] = jugando;
+		pocisiones1[remplazo] = posicion;
+		System.out.println(linea);
+		System.out.println("Lista Actualizada: "+ Arrays.toString(team1));
+		System.out.println("Lista Actualizada: "+ Arrays.toString(pocisiones1));
+		System.out.println("Lista Actualizada: "+Arrays.toString(teamN1));  
+		System.out.println("Lista Actualizada: "+Arrays.toString(estadoJugadores)); 
 
-			ArrayList<String>arrayList2 = new ArrayList<String>(Arrays.asList(pocisiones1P));
-			arrayList2.add(posicion.toUpperCase());  
-			pocisiones1P= arrayList2.toArray(pocisiones1P); 
-
-
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>(Arrays.asList(teamNP));  
-			arrayList1.add(juego);  
-			teamNP = arrayList1.toArray(teamNP);  
-
-
-
-			ArrayList<Boolean> arrayList3 = new ArrayList<Boolean>(Arrays.asList(estadoJugadores));  
-			arrayList3.add(jugando);  
-			estadoJugadores = arrayList3.toArray(estadoJugadores); 
-			contador++;
-		}
-		System.out.println("Array after adding element: "+ Arrays.toString(team1));
-		System.out.println("Array after adding element: "+ Arrays.toString(pocisiones1P));
-		System.out.println("Array after adding element: "+Arrays.toString(teamNP));  
-		System.out.println("Array after adding element: "+Arrays.toString(uno.estadoJugadores)); 
 	}
 
 	public static void nuevoJugadorcanchaMP(int[][] intArray, int cambio, int player) {
 		do {
-
-
-
 
 			do {
 				System.out.println("Ingrese el valor de la fila y columna  : ");
@@ -2070,7 +2003,7 @@ public class uno {
 			System.out.println(+ i +")"+team2P[i]);
 		}
 		int capitan = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del capitan"));
-		JOptionPane.showMessageDialog(null, "El capitan es:"+ team2P[capitan]);
+		JOptionPane.showMessageDialog(null, "El capitan es: "+ team2P[capitan]);
 	}
 	public static void cambiarEstadoMP() {
 		for( i = 0; i<team2P.length;i++) {
