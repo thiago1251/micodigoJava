@@ -61,11 +61,11 @@ public class ProyectoFinal{
 		
 	}
 	public static void saludo() {
-		JOptionPane.showMessageDialog(null, "                                                                                    "+"¡HELLO WORLD!\nESTE ES UN SISTEMA DE "
+		JOptionPane.showMessageDialog(null, "                                                               "+"¡HELLO WORLD!\nESTE ES UN SISTEMA DE "
 				+ "ADMINISTRACION PARA LOS ENCUENTROS DEPORTIVOS QUE SE LLEVARAN A CABO\nEN EL ESTADIO AZTECA  :)");
 	}
 	public static void firstmenu() {
-		String menu="-------------------"+"INICIO"+"--------------------"+"\n1. Partidos\n2. Informacion de los Jugadores\n3. Salir";
+		String menu="-------------------"+"INICIO"+"--------------------"+"\n1. Informacion de los Jugadores\n2. Partidos\n3. Salir";
 		int opcion=0;
 		
 		do {
@@ -74,11 +74,13 @@ public class ProyectoFinal{
 			switch (opcion)
 			{
 			case 1:
-		MenuSimulado();
+				equipos();
+	
 
 				break;
 			case 2:
-				equipos();
+				
+				MenuSimulado();
 				break;
 			}
 
@@ -611,24 +613,6 @@ public class ProyectoFinal{
 	public static void nuevoJugadorcancha(int[][] intArray, int cambio, int player) {
 		do {
 
-			for ( i=0; i<intArray.length;i++) {
-				for (j=0; j<intArray[i].length;j++) {
-					intArray [0][2]= 23;
-					intArray [1][0]= 2;   intArray [1][4]= 6;  
-					intArray [2][1]= 14;  intArray [2][3]= 3;
-					intArray [3][1]= 15;  intArray [3][3]= 8; 
-					intArray [4][0]= 5;   intArray [4][4]= 11; 
-					intArray [5][1]= 10;  intArray [5][3]= 20;
-				}
-			}
-			for (i=0; i<intArray.length;i++) {
-				for (j=0; j<intArray[i].length;j++) {
-					System.out.print(intArray[i][j]+ " ");
-				}
-				System.out.println();
-			}
-
-
 			do {
 				System.out.println("Ingrese el valor de la fila y columna  : ");
 				filaBuscar=sc.nextInt();
@@ -683,7 +667,7 @@ public class ProyectoFinal{
 						JOptionPane.showMessageDialog(null, "Error, ingrese una opción válida.");
 						contador2++;
 					}
-				}while(player<1 || player>3);
+				}while(player==100);
 			} else {
 				JOptionPane.showMessageDialog(null, "Lo siento,primero debe sacar el jugador en esa posicion.");
 			}
@@ -868,24 +852,7 @@ public class ProyectoFinal{
 
 	public static void nuevoJugadorcanchaM(int[][] intArray, int cambio, int player) {
 
-		for ( i=0; i<intArray.length;i++) {
-			for (j=0; j<intArray[i].length;j++) {
-				intArray [0][2]= 23;
-				intArray [1][0]= 2;   intArray [1][4]= 6;  
-				intArray [2][1]= 14;  intArray [2][3]= 3;
-				intArray [3][1]= 15;  intArray [3][3]= 8; 
-				intArray [4][0]= 5;   intArray [4][4]= 11; 
-				intArray [5][1]= 10;  intArray [5][3]= 20;
-			}
-		}
-		for (i=0; i<intArray.length;i++) {
-			for (j=0; j<intArray[i].length;j++) {
-				System.out.print(intArray[i][j]+ " ");
-			}
-			System.out.println();
-		}
-
-
+		
 		do {
 
 			do {
@@ -941,8 +908,21 @@ public class ProyectoFinal{
 					default:
 						JOptionPane.showMessageDialog(null, "Error, ingrese una opción válida.");
 						contador2++;
+						break;
 					}
-				}while(player<1 || player>3);
+				}while(player==100);
+				System.out.println("\n-----------------------------------------");
+				for ( i=0; i<intArray.length;i++) {
+					for (j=0; j<intArray[i].length;j++) {
+					}
+				}
+				for (i=0; i<intArray.length;i++) {
+					for (j=0; j<intArray[i].length;j++) {
+						System.out.print(intArray[i][j]+ " ");
+					}
+					System.out.println();
+				}
+				
 			} else {
 				JOptionPane.showMessageDialog(null, "Lo siento,primero debe sacar el jugador en esa posicion.");
 			}
@@ -1125,22 +1105,6 @@ public class ProyectoFinal{
 	}
 
 	public static void nuevoJugadorcanchaV(int[][] intArray, int cambio, int player) {
-		for ( i=0; i<intArray.length;i++) {
-			for (j=0; j<intArray[i].length;j++) {
-				intArray [0][2]= 23;
-				intArray [1][0]= 2;   intArray [1][4]= 6;  
-				intArray [2][1]= 14;  intArray [2][3]= 3;
-				intArray [3][1]= 15;  intArray [3][3]= 8; 
-				intArray [4][0]= 5;   intArray [4][4]= 11; 
-				intArray [5][1]= 10;  intArray [5][3]= 9;
-			}
-		}
-		for (i=0; i<intArray.length;i++) {
-			for (j=0; j<intArray[i].length;j++) {
-				System.out.print(intArray[i][j]+ " ");
-			}
-			System.out.println();
-		}
 
 		do {
 
@@ -1201,7 +1165,7 @@ public class ProyectoFinal{
 						JOptionPane.showMessageDialog(null, "Error, ingrese una opción válida.");
 						contador2++;
 					}
-				}while(player<1 || player>3);
+				}while(player==100);
 			} else {
 				JOptionPane.showMessageDialog(null, "Lo siento,primero debe sacar el jugador en esa posicion.");
 			}
